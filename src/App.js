@@ -1,5 +1,7 @@
+import React from "react";
+
 function App() {
-  return <div className="App"></div>;
+  return <div className="text-3xl">Hi</div>;
 }
 
 export default App;
