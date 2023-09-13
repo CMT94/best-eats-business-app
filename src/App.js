@@ -1,7 +1,13 @@
 import React from "react";
 
+import Navbar from "./components/Navbar";
+
 function App() {
-  return <div className="text-3xl">Hi</div>;
+  return (
+    <React.Fragment>
+      <Navbar />
+    </React.Fragment>
+  );
 }
 
 export default App;
