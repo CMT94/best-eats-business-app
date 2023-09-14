@@ -29,10 +29,16 @@ const Navbar = () => {
   const selectDelivery = () => setIsDeliverySelected(true);
   const selectPickup = () => setIsDeliverySelected(false);
 
+  const [isMobileMenuDisplayed, setIsMobileMenuDisplayed] =
+    React.useState(false);
+  const toggleMobileMenu = () =>
+    setIsMobileMenuDisplayed((prevState) => !prevState);
+  const closeMobileMenu = () => setIsMobileMenuDisplayed(false);
+
   return (
     <div className="max-w-[1640px] mx-auto flex justify-between items-center p-4">
       <div className="flex items-center">
-        <div className="cursor-pointer">
+        <div className="cursor-pointer" onClick={toggleMobileMenu}>
           <AiOutlineMenu size={30} />
         </div>
         <h1 className="text-2xl sm:text-3xl lg:text-4xl px-2">
@@ -77,13 +83,22 @@ const Navbar = () => {
       </button>
 
       {/* Overlay */}
-      <div className="bg-black/80 fixed w-full h-screen z-10 top-0 left-0"></div>
+      {isMobileMenuDisplayed && (
+        <div className="bg-black/80 fixed w-full h-screen z-10 top-0 left-0"></div>
+      )}
 
       {/* Sidedrawer */}
-      <div className="fixed top-0 left-0 w-[300px] h-screen bg-white z-10 duration-300">
+      <div
+        className={
+          isMobileMenuDisplayed
+            ? "fixed top-0 left-0 w-[300px] h-screen bg-white z-10 duration-300"
+            : "fixed top-0 left-[-100%] w-[300px] h-screen bg-white z-10 duration-300"
+        }
+      >
         <AiOutlineClose
           size={30}
           className="absolute right-4 top-4 cursor-pointer"
+          onClick={toggleMobileMenu}
         />
         <h2 className="text-2xl p-4">
           Best <span className="font-bold">Eats</span>
