@@ -110,6 +110,7 @@ const Navbar = () => {
               <li
                 key={linkIndex}
                 className="text-xl py-4 flex items-center cursor-pointer"
+                onClick={closeMobileMenu}
               >
                 <span>{link.icon}</span>
                 <span>{link.title}</span>
