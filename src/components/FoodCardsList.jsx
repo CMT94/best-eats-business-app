@@ -1,6 +1,6 @@
 import React from "react";
 
-import { foodsData, categories } from "../data/data";
+import { foodsData } from "../data/data";
 
 import FiltersSection from "./FiltersSection";
 import Card from "./shared/Card";
@@ -25,8 +25,8 @@ const FoodCardsList = () => {
 
   return (
     <div className="max-w-[1640px] m-auto px-4 py-12">
-      <h1 className="text-orange-600 font-bold text-4xl text-center">
-        Top Rated Menu Items
+      <h1 className="text-orange-600 font-bold text-4xl text-center mb-4">
+        Top Rated Menu
       </h1>
 
       <FiltersSection
@@ -41,7 +41,6 @@ const FoodCardsList = () => {
             name={foodItem.name}
             img={foodItem.image}
             price={foodItem.price}
-            category={foodItem.category}
           />
         ))}
       </div>

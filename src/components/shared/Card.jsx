@@ -1,7 +1,7 @@
 import React from "react";
 
 const Card = (props) => {
-  const { name, img, category, price } = props;
+  const { name, img, price } = props;
   return (
     <div className="border shadow-lg rounded-lg hover:scale-105 duration-300">
       <img
